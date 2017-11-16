@@ -1,7 +1,6 @@
 package com.example.ranaranvijaysingh.internetcheckdemo;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -34,7 +33,6 @@ public class InternetCheckTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        Log.i("", "onPostExecute " + aBoolean);
         MyApplication.isInternetAvailable = aBoolean;
     }
 }

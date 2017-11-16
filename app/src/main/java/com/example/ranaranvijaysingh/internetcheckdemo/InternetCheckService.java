@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,7 +14,6 @@ public class InternetCheckService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i("", "onStartCommand");
         startTimer();
         return Service.START_STICKY;
     }
@@ -31,7 +29,6 @@ public class InternetCheckService extends Service {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Log.i("", "run");
                 new InternetCheckTask().execute();
                 startTimer();
             }
